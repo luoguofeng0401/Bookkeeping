@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TodoListView: View {
-    @State var vm: TodoViewModel
+    @State private var  vm: TodoViewModel
     @State private var showAdd = false
     
     var body: some View {
@@ -38,4 +38,6 @@ struct TodoListView: View {
     }
 }
 
-
+#Preview {
+    TodoListView()
+}
