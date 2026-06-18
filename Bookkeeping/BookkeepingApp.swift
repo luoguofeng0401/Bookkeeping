@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftData
 
 @main
 struct BookkeepingApp: App {
@@ -14,6 +13,5 @@ struct BookkeepingApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: TodoItem.self)
     }
 }
