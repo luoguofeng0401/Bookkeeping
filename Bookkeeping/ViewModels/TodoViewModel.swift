@@ -62,6 +62,3 @@ final class TodoViewModel {
     
 }
 
-#Preview {
-    TodoViewModel()
-}

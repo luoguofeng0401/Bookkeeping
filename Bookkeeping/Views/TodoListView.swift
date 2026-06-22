@@ -38,6 +38,4 @@ struct TodoListView: View {
     }
 }
 
-#Preview {
-    TodoView()
-}
+
