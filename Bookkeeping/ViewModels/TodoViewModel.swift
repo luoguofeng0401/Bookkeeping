@@ -11,24 +11,24 @@ import SwiftData
 @Observable
 final class TodoViewModel {
     
-    private let context: ModelContext
+    private let content: ModelContext
     var todos: [TodoItem] = []
     
-    init(context: ModelContext) {
-        self.context = context
+    init(content: ModelContext) {
+        self.content = content
         fetch()
     }
     
     func add(title: String) {
         guard !title.trimmingCharacters(in: .whitespaces).isEmpty else { return }
         let item = TodoItem(title: title)
-        context.insert(item)
+        content.insert(item)
         save()
     }
     
     func fetch() {
-        let descriptor = FetchDescriptor<TodoItem>(sortBy: [SortDescriptor(\.createdAt, order: .reverse)])
-        todos = (try? context.fetch(descriptor)) ?? []
+        let descriptor = FetchDescriptor<TodoItem>(sortBy: [SortDescriptor(\.createAt, order: .reverse)])
+        todos = (try? content.fetch(descriptor)) ?? []
     }
     
     func toggle(_ item: TodoItem) {
@@ -42,17 +42,17 @@ final class TodoViewModel {
     }
     
     func delete(_ item: TodoItem) {
-        context.delete(item)
+        content.delete(item)
         save()
     }
     
     func delete(at offsets: IndexSet) {
-        offsets.forEach { context.delete(todos[$0]) }
+        offsets.forEach { content.delete(todos[$0]) }
         save()
     }
     
     private func save() {
-        try? context.save()
+        try? content.save()
         fetch()
     }
 }

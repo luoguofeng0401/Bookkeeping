@@ -12,11 +12,11 @@ import SwiftData
 class TodoItem {
     var title: String
     var isCompleted: Bool
-    var createdAt: Date
+    var createAt: Date
     
     init(title: String) {
         self.title = title
         self.isCompleted = false
-        self.createdAt = Date()
+        self.createAt = Date()
     }
 }

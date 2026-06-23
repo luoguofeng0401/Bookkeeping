@@ -17,7 +17,7 @@ struct TodoListView: View {
             List {
                 ForEach(vm.todos) { todo in
                     NavigationLink(destination: TodoDetailView(todo: todo, vm: vm)) {
-                        TodoRowView(todo: todo){
+                        TodoRowView(todo: todo) {
                             vm.toggle(todo)
                         }
                     }
@@ -40,5 +40,4 @@ struct TodoListView: View {
         }
     }
 }
-
 
