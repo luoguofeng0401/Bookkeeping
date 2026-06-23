@@ -11,7 +11,7 @@ import SwiftData
 @Observable
 final class TodoViewModel {
     
-    private var context: ModelContext
+    private let context: ModelContext
     var todos: [TodoItem] = []
     
     init(context: ModelContext) {
