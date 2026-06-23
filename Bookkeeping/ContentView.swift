@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var content
     
     var body: some View {
-        TodoListView(vm: TodoViewModel(content: content))
+        
     }
 }
 
